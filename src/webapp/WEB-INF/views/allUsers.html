@@ -9,17 +9,15 @@
 </head>
 <body>
 <h1>Table Users</h1>
-
+<br>
 <table border="1">
     <tr>
-        <th>id</th>
         <th>name</th>
         <th>last_name</th>
         <th>age</th>
     </tr>
 
     <div th:each="users : ${users}">
-        <td th:utext="${users.id}">id</td>
         <td th:utext="${users.name}">name</td>
         <td th:utext="${users.last_name}">last_name</td>
         <td th:utext="${users.age}">age</td>

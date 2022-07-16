@@ -7,31 +7,32 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import web.DAO.UserDAO;
+import web.DAO.UserDAOImp;
 
 @Controller
 @RequestMapping("/users")
 public class UsersController {
+	@Autowired
+	private final UserDAOImp userDAO;
 
-	private final UserDAO userDAO;
-
-	public UsersController(UserDAO userDAO) {
+	public UsersController(UserDAOImp userDAO) {
 		this.userDAO = userDAO;
 	}
 
 	@GetMapping()
-	public String allUsers(Model model){
+	public String showAllUsers(Model model){
 
-		model.addAttribute("users", userDAO.allUsers());
+		model.addAttribute("allUsers", userDAO.getAllUsers());
 
-		return "users";
+		return "all-users";
 	}
-
-	@GetMapping("/{id}")
-	public String show(@PathVariable("id") int id, Model model){
-
-		model.addAttribute("user", userDAO.show(id));
-
-		return "users/show";
-	}
+//
+//	@GetMapping("/{id}")
+//	public String show(@PathVariable("id") int id, Model model){
+//
+//		model.addAttribute("user", userDAO.show(id));
+//
+//		return "users/show";
+//	}
 	
 }

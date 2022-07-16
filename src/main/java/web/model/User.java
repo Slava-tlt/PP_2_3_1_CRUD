@@ -16,15 +16,14 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "Age")
-    private int age;
+    @Column(name = "age")
+    private Byte age;
 
 
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName, int age) {
-        this.id = id;
+    public User(String firstName, String lastName, Byte age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -54,11 +53,11 @@ public class User {
         this.firstName = firstName;
     }
 
-    public int getAge() {
+    public Byte getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Byte age) {
         this.age = age;
     }
 
