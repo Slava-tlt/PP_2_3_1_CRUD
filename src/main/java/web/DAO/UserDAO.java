@@ -9,7 +9,7 @@ import java.util.List;
 @Component
 public class UserDAO {
 
-    private static int User_Count;
+    private static Long User_Count;
 
     private List<User> users;
 

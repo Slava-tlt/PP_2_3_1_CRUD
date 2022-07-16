@@ -23,7 +23,7 @@ public class UsersController {
 
 		model.addAttribute("users", userDAO.allUsers());
 
-		return "users/allUsers";
+		return "users";
 	}
 
 	@GetMapping("/{id}")
